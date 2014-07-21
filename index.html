@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading</title>
+</head>
+<body>
+  <div id="loader">Loading...</div>
+
+  <script src="vendor/js/jquery-2.1.1.min.js"></script>
+  <script>
+    var J = $;
+
+    var Application = {
+      engage: function () {
+        window.addEventListener('load', this.toggleLoaderVisibility, false);
+      },
+      toggleLoaderVisibility: function () {
+        J('#loader').toggle();
+      }
+    };
+
+    Application.engage();
+  </script>
+</body>
+</html>
