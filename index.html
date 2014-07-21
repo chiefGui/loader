@@ -2,21 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Loading</title>
+  <title>Loader</title>
 </head>
 <body>
   <div id="loader">Loading...</div>
 
   <script src="vendor/js/jquery-2.1.1.min.js"></script>
   <script>
-    var J = $;
+    J = jQuery || $;
 
-    var Application = {
+    var Loader = {
+      _ELEMENT: '#loader'
+    };
+
+    Loader.toggleVisibility = function () {
+      J(this._ELEMENT).toggle();
+    };
+
+    window.Application = {
       engage: function () {
-        window.addEventListener('load', this.toggleLoaderVisibility, false);
-      },
-      toggleLoaderVisibility: function () {
-        J('#loader').toggle();
+        window.addEventListener('load', Loader.toggleVisibility(), false);
       }
     };
 

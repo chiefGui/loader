@@ -2,10 +2,9 @@ var http = require("http")
     , url = require("url")
     , path = require("path")
     , fs = require("fs")
-    , PORT = process.argv[2] || 3000;
+    , PORT = process.argv[2] || 7000;
 
 http.createServer(function(request, response) {
-
   var uri = url.parse(request.url).pathname
       , filename = path.join(process.cwd(), uri);
   
